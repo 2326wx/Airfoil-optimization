@@ -31,8 +31,8 @@ def show_foil_info(fpath, param_to_show='Cl'):
 
     for r in range(len(Re)):    
         fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 2))
-        axes[0].set(title="Re="+str(Re[r])+" - after Xfoil, foil: ")
-        axes[1].set(title="Re="+str(Re[r])+" - after correction, foil: ")
+        axes[0].set(title="Re="+str(Re[r])+" - after Xfoil")
+        axes[1].set(title="Re="+str(Re[r])+" - after correction")
         axes[0].plot(alfas, pre_foil_array[param[param_to_show], r, :])
         axes[1].plot(alfas, foil_array[param[param_to_show], r, :])
 
@@ -185,7 +185,8 @@ def interpolate_airfoil(x, y, n_foil_points=128):
 
 
 def fill_gaps_in_xfoil_curve(curve, deg=3):
-    '''    Takes curve X and Y arrays, interpolates middle NaNs, extrapolates head and tail NaNs.
+    '''    
+    Takes curve X and Y arrays, interpolates middle NaNs, extrapolates head and tail NaNs.
     Returns arrays of the same size.    
     '''
     assert isinstance(curve, np.ndarray), "The curve is not an array"
