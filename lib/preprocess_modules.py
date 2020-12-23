@@ -208,20 +208,4 @@ def fill_gaps_in_xfoil_curve(curve, deg=3):
     
     return res_curve
 
-
-
-def save_pkl(data, filepath):
-    '''
-    Saves any object as pickle file. Filename shall contain full path.
-    '''
-    with open(filepath, 'wb') as output:
-        pickle.dump(data, output)
-        
-        
-        
-def load_pkl(filepath):
-    '''
-    Loads object from pickle file. Filename shall contain full path.
-    '''
-    with open(filepath, 'rb') as input:
-        return pickle.load(input)
+    

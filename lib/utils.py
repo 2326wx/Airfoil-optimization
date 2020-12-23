@@ -163,16 +163,17 @@ def deform(spline, span_position=80, width=10, depth=10, positive=True):
 
     return new_spline
 
-def save_pkl(data, filename):
+
+def save_pkl(data, filepath):
     '''
     Saves any object as pickle file. Filename shall contain full path.
     '''
-    with open(filename, 'wb') as output:
-        pickle.dump(data, output)
+    with open(filepath, 'wb') as output:
+        pickle.dump(data, output)       
         
-def load_pkl(filename):
+def load_pkl(filepath):
     '''
     Loads object from pickle file. Filename shall contain full path.
     '''
-    with open(filename, 'rb') as input:
+    with open(filepath, 'rb') as input:
         return pickle.load(input)
