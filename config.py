@@ -1,4 +1,5 @@
 # paths
+dataset_folder                     = "./dataset"
 foils_dat_path                     = "./Foils DB/dat"
 foils_pkl_path                     = "./Foils DB/pkl"
 foils_bmp_path                     = "./Foils DB/bmp"

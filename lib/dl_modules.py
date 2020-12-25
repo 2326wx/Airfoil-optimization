@@ -1,11 +1,9 @@
 from tensorflow.keras.utils import Sequence
 import numpy as np
 
-
-
 class BatchGenerator(Sequence):
     
-    def __init__(self, X_input, y_input, list_IDs, batch_size=4, Xdim=(64,64,1), ydim=(128,), shuffle=True):
+    def __init__(self, X_input, y_input, list_IDs, batch_size=4, Xdim=(64,64,1), ydim=(128,), shuffle=True, dtype_x='float64', dtype_y='int8'):
         
         self.Xdim = Xdim
         self.ydim = ydim
@@ -15,7 +13,8 @@ class BatchGenerator(Sequence):
         self.on_epoch_end()
         self.X_input = X_input
         self.y_input = y_input
-        
+        self.dtype_x = dtype_x
+        self.dtype_y = dtype_y
 
     def __len__(self):
         'Denotes the number of batches per epoch'
@@ -43,8 +42,8 @@ class BatchGenerator(Sequence):
     def __data_generation(self, list_IDs_temp):
         'Generates data containing batch_size samples' # X : (n_samples, *dim, n_channels)
        
-        X = np.empty((self.batch_size, *self.Xdim)).astype('float64')
-        y = np.empty((self.batch_size, *self.ydim)).astype('float64')
+        X = np.empty((self.batch_size, *self.Xdim), dtype = self.dtype_x)
+        y = np.empty((self.batch_size, *self.ydim), dtype = self.dtype_y)
         
         for i, ID in enumerate(list_IDs_temp):            
             X[i,] = self.X_input[ID,]
