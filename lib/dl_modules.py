@@ -3,7 +3,7 @@ import numpy as np
 
 class BatchGenerator(Sequence):
     
-    def __init__(self, X_input, y_input, list_IDs, batch_size=4, Xdim=(64,64,1), ydim=(128,), shuffle=True, dtype_x='float64', dtype_y='int8'):
+    def __init__(self, X_input, y_input, list_IDs, batch_size=4, Xdim=(64,64,1), ydim=(128,), shuffle=True, dtype_x='float64', dtype_y='float64'):
         
         self.Xdim = Xdim
         self.ydim = ydim
