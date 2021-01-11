@@ -29,3 +29,8 @@ n_points_interpolate_for_bmp       = 10000
 # training params
 train_percentage                   = 0.75
 val_percentage                     = 0.9
+
+# prediction params
+n_points_in_predicted_dat          = 256
+weights_file                       = 'train v4 bs12 2020-12-31 11-47.h5'
+yellow_threshold                   = 0.25
