@@ -31,16 +31,16 @@ Now we can take key airfoil parameters and use as **"X"** data. What are require
 - there shall be quite large and multidimensional array of such data to allow "black box" be successfully trained.
 
 Such parameters are:
-- Cl: lift coefficient;
-- Cd: drag coefficient;
-- Cm: moment coefficient;
-- Cp: pressure coefficient;
-- d:  foil thickness at flap root;
-- S:  foil max thickness.
+- **Cl**: lift coefficient;
+- **Cd**: drag coefficient;
+- **Cm**: moment coefficient;
+- **Cp**: pressure coefficient;
+- **d**:  foil thickness at flap root;
+- **S**:  foil max thickness.
 
 
 
-As soon as foil parameters are unique for each combination of Re and Alpha (except S and d), we easily get 3D array of **"X"** data:
+As soon as foil parameters are unique for each combination of Re and Alpha (except **S** and **d**), we easily get 3D array of **"X"** data:
 - axis 0: required parameters for particular Re and Alpha;
 - axis 1: Re;
 - axis 2: Alpha:
