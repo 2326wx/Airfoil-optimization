@@ -5,6 +5,7 @@ from app.config import *
 from pathlib import Path
 from app.dat_to_xls import get_foil_array
 from app.predict import predict
+from app.nets.nn import *
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT']=0
 app.config["CACHE_TYPE"] = "null"
@@ -17,6 +18,10 @@ def cleanup(del_list):
                     os.remove(os.path.join(files_folder,f))
                 except:
                     pass
+
+# define model
+model = light_param_net()
+model.load_weights(str(Path('./app/weights', weights_file)))
     
 
 @app.route('/')
@@ -60,7 +65,7 @@ def predict_foil():
     if '.xls' in file.filename:                    
         file.save(os.path.join(files_folder, file.filename))
         try: 
-            return predict(file.filename)     
+            return predict(file.filename, model)     
         except Exception as ex:
             abort(500, description=str(ex))
     else:

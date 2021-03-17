@@ -53,3 +53,25 @@ class BatchGenerator(Sequence):
     
     
     
+def tversky_loss(y_true, y_pred):
+    #https://github.com/keras-team/keras/issues/9395#issuecomment-379228094
+    
+    y_true = K.cast(y_true,'float32')
+    
+    alpha = 0.90
+    beta  = 0.10
+    
+    ones = K.ones(K.shape(y_true))
+    p0 = y_pred      # proba that voxels are class i
+    p1 = ones-y_pred # proba that voxels are not class i
+    g0 = y_true
+    g1 = ones-y_true
+    
+    num = K.sum(p0*g0, (0,1,2))
+    den = num + alpha*K.sum(p0*g1,(0,1,2)) + beta*K.sum(p1*g0,(0,1,2))
+    
+    T = K.sum(num/den) # when summing over classes, T has dynamic range [0 Ncl]
+    
+    Ncl = K.cast(K.shape(y_true)[-1], 'float32')
+    return Ncl-T    
+    

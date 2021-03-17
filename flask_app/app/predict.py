@@ -18,17 +18,13 @@ from app.config import *
 
 from app.nets.nn import *
 
-def predict(fname):
+def predict(fname, model):
     ''' Predicts foil.
     Inputs: xls sheet with foil params with *fname*.
     Outputs: .dat and /xls files.
     '''    
     # dict for output file names
     output={}
-    
-    # define model
-    model = light_param_net(3072)
-    model.load_weights(str(Path('./app/weights', weights_file)))
 
     # load foil data from table
     df = pd.read_excel(os.path.join(files_folder, fname))

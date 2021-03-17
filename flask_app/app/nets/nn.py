@@ -63,7 +63,7 @@ class flexi_net(Sequential):
 
 class light_param_net(Sequential):    
     
-    def __init__(self, num_coefs=400, add_coef_layer=False, reg=0.0001, learning_rate=1e-3):        
+    def __init__(self, num_coefs=3072, add_coef_layer=False, reg=0.0001, learning_rate=1e-3):        
         super(light_param_net, self).__init__(layers=None, name=None)
                 
         if add_coef_layer:
