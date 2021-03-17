@@ -111,6 +111,15 @@ Frontend implemented as Excel VBA macros, interacting with the server by HTTP re
 
 Let's try to predict airfoil with known geometry by its parameters:
 
+This is input array for Cl:
+<img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/xls_mh32.png">
+
+
+This is prediction result before rounding, smoothing and interpolation:
+<img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/rough_mh32.png">
+
+
+And here is smoothed interpolated prediction result, compared with true foil:
 <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/result1.png">
 
 
