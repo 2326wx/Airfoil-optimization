@@ -1,6 +1,6 @@
 # Inverse design of airfoil with DL methods
 
-## 1. Task description and problem setting.
+## 1. Task description and problem setting
 
 **Task:** to create airfoil with required aerodynamical parameters.
 
@@ -79,7 +79,7 @@ So, now we have **"X"** data as an array of (*n_data_layers, n_points_Re, n_poin
 
 For check of this data approach let's take extracting part of U-net and train it on images of 512x512 size.
 
-ToDo: 
+**ToDo:**
 1. Change image size to 256x1024 and achieve the same or better results.
 2. Use more complicated CNN architectures.
 3. Implement ensemble of different CNNs.
@@ -91,17 +91,18 @@ ToDo:
 
 Now using simplest MSE both for metric and loss.
 
-Todo: use Tversky loss function and add IoU metric.
+**ToDo:** 
+1. Use Tversky loss function and add IoU metric.
 
 
 
 
 ## 5. Production use
 
-Backend implemented as a microservice, based on a Flask server.
+***Backend*** implemented as a microservice, based on a Flask server.
 
-Frontend implemented as Excel VBA macros, interacting with the server by HTTP requests. Why Excel?
-- tool users are not experienced PC users and Excel is the maximum of their knowledge;
+***Frontend*** implemented as Excel VBA macros, interacting with the server via HTTP requests. Why Excel?
+- potential tool users are not experienced PC users and Excel is the maximum of their knowledge;
 - large tables with input data require complicated frontend;
 - Excel gives flexibility in adding new modules like graphs and charts.
 
@@ -110,7 +111,7 @@ Frontend implemented as Excel VBA macros, interacting with the server by HTTP re
 
 ## 6. Predictions test
 
-Let's try to predict airfoil with known geometry by its parameters:
+Let's try to predict airfoil with known geometry by its parameters.
 
 This is input array for Cl:
 <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/xls_mh32.png">
