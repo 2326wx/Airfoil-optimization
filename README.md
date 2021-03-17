@@ -17,6 +17,7 @@ parameters looks like:
 
 
 
+
 ## 2. Solution approach
 
 Let's do like we usually do in DL: take some "black box", put known data **"X"** to the input, put desired data **"y"** to the output and run a training.
@@ -54,6 +55,7 @@ As soon as foil parameters are unique for each combination of Re and Alpha (exce
   
   
   
+  
   ### Alpha:
   
   <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/AoA.jpg">
@@ -67,16 +69,51 @@ Resulting array looks like:
 
 Layers 6 and 7 with Re and Alpha will not take part in predictions; they need for info transfer between modules and can be dropped or replaced with some additional foil parameters.
 
-
-n_data_layers, n_points_Re, n_points_alfa
-
+So, now we have **"X"** data as an array of (*n_data_layers, n_points_Re, n_points_alfa*) shape.
 
 
 
 
+## 3. Implementation 
+
+For check of this data approach let's take extracting part of U-net and train it on images of 512x512 size.
+
+*ToDo: 
+*1. Change image size to 256x1024 and achieve the same or better results.
+*2. Use more complicated CNN architectures.
+*3. Implement ensemble of different CNNs.
+
+
+
+
+## 4. Loss and Metrics
+
+Now using simplest MSE both for metric and loss.
+
+*Todo: use Tversky loss function and add IoU metric.
+
+
+
+
+## 5. Production use
+
+Backend implemented as a microservice, based on a Flask server.
+
+Frontend implemented as Excel VBA macros, interacting with the server by HTTP requests. Why Excel?
+- tool users are not experienced PC users and Excel is the maximum of their knowledge;
+- large tables with input data require complicated frontend;
+- Excel gives flexibility in adding new modules like graphs and charts.
+
+
+
+
+## 6. Predictions test
+
+Let's try to predict airfoil with known geometry by its parameters:
+
+<img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/result1.png">
 
 
 
 
 
-# A collapsible section with markdown
