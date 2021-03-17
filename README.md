@@ -45,11 +45,16 @@ As soon as foil parameters are unique for each combination of Re and Alpha (exce
 
 <details>
   <summary>What are Re and Alpha?!!</summary>
-  Re:
+  ### Re:
+  
   <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/re.png">
+  
   In fact, is proportional to airflow *speed*.
   
-  Alpha:
+  
+  
+  ### Alpha:
+  
   <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/AoA.jpg">
 
 </details>
