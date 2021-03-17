@@ -4,8 +4,14 @@
 
 **Task:** to create airfoil with required aerodynamical characteristics.
 
-**Problem:** there is good XFoil tool for analysis of existing airfoil, but no tool, which can *create* arbitrary airfoil by known aerodynamical characteristics.
+**Problem:** there is good XFoil tool for analysis of existing airfoil, but there is no tool, which can *create* arbitrary airfoil by known aerodynamical characteristics.
 
-<img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/mh32.png" width=300> ----- OK ----> <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/mh32_polars.png" width=300>
+Foil:
+<img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/mh32.png">
 
-<img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/mh32_polars.png" width=300> ----- X ----> <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/mh32.png" width=300>
+Characteristics:
+<img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/mh32_polars.png">
+
+
+**So we can get characteristics from foil picture but can not get new foil from required characteristics.**
+
