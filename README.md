@@ -43,10 +43,21 @@ As soon as foil parameters are unique for each combination of Re and Alpha (exce
 - axis 1: Re;
 - axis 2: Alpha:
 
+<details>
+  <summary>What are Re and Alpha?!!</summary>
+  Re:
+  <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/re.png">
+  In fact, is proportional to airflow *speed*.
+  
+  Alpha:
+  <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/AoA.jpg">
+
+</details>
+
 Resulting array looks like:
 <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/3dc.jpg">
 
-Layers 7 and 8 with Re and Alpha will not take part in predictions; they need for info transfer between modules and can be dropped or replaced with some additional foil parameters.
+Layers 6 and 7 with Re and Alpha will not take part in predictions; they need for info transfer between modules and can be dropped or replaced with some additional foil parameters.
 
 
 n_data_layers, n_points_Re, n_points_alfa
@@ -61,12 +72,3 @@ n_data_layers, n_points_Re, n_points_alfa
 
 
 # A collapsible section with markdown
-<details>
-  <summary>Click to expand!</summary>
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
-</details>
