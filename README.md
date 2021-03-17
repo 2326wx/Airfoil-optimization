@@ -28,15 +28,16 @@ What do we want from this "black box?" New airfoil picture. So our **"y"** data 
 Now we can take key airfoil parameters and use as **"X"** data. What are requirements for this data?
 - it shall be unique for each foil;
 - it shall be full enough to describe airfoil;
-- there shall be quite large and multidimensional array of such data to allow "black box" successfully train.
+- there shall be quite large and multidimensional array of such data to allow "black box" be successfully trained.
 
 Such parameters are:
 - Cl: lift coefficient;
 - Cd: drag coefficient;
 - Cm: moment coefficient;
 - Cp: pressure coefficient;
-- S:  foil max thickness;
-- d:  foil thickness at flap root.
+- d:  foil thickness at flap root;
+- S:  foil max thickness.
+
 
 
 As soon as foil parameters are unique for each combination of Re and Alpha (except S and d), we easily get 3D array of **"X"** data:
@@ -51,7 +52,7 @@ As soon as foil parameters are unique for each combination of Re and Alpha (exce
   
   <img src = "https://github.com/2326wz/Airfoil-optimization/blob/master/images/re.png">
   
-  In fact, is proportional to airflow *speed*.
+  In fact, it is proportional to airflow *speed*, because all other variables are *fixed* in our approach.
   
   
   
