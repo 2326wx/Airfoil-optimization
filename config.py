@@ -1,5 +1,5 @@
 # paths
-dataset_folder                     = "./dataset"
+dataset_folder                     = "./dataset/512x512"
 foils_dat_path                     = "./Foils DB/dat"
 foils_pkl_path                     = "./Foils DB/pkl"
 foils_bmp_path                     = "./Foils DB/bmp"

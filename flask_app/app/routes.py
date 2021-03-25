@@ -20,7 +20,7 @@ def cleanup(del_list):
                     pass
 
 # define model
-model = light_param_net()
+model = ldm_net(verbose=True)
 model.load_weights(str(Path('./app/weights', weights_file)))
     
 

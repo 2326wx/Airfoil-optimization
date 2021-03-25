@@ -59,8 +59,6 @@ class flexi_net(Sequential):
 
         print('Light parametrization net output shape:', self.layers[len(self.layers)-1].output_shape)
         
-        
-
 class light_param_net(Sequential):    
     
     def __init__(self, num_coefs=3072, add_coef_layer=False, reg=0.0001, learning_rate=1e-3):        
@@ -154,3 +152,39 @@ class heavy_param_net(Sequential):
         self.compile(optimizer=Adam(learning_rate=learning_rate), loss='mse', metrics=['mse'])
         
         print('Heavy parametrization net output shape:', self.layers[len(self.layers)-1].output_shape)
+
+class ldm_net(Sequential):    
+    
+    def __init__(self, num_coefs=3072, reg=0.0001, learning_rate=1e-3, loss='mse', metrics=['mse'], verbose=False):   
+        
+        super(ldm_net, self).__init__(layers=None, name=None)
+                
+        self.add(Dense(num_coefs, input_shape=(num_coefs,), activation=None))
+        self.add(Reshape((2,2,int(num_coefs/4)),input_shape=(num_coefs,)))                             
+        self.add(UpSampling2D())                                                               
+        self.add(Conv2DTranspose(int(num_coefs/8),(3,3), strides=1, activation='hard_sigmoid'))          
+        self.add(BatchNormalization())
+        self.add(UpSampling2D())                                                               
+        self.add(Conv2DTranspose(int(num_coefs/16),(3,3), strides=1, activation='relu'))         
+        self.add(BatchNormalization())                                                         
+        self.add(UpSampling2D())                                                               
+        self.add(Conv2DTranspose(int(num_coefs/32),(3,3), strides=1, activation='relu'))         
+        self.add(BatchNormalization())                                                         
+        self.add(UpSampling2D())                                                               
+        self.add(Conv2DTranspose(int(num_coefs/64),(3,3), strides=1, activation='relu'))         
+        self.add(BatchNormalization())                                                         
+        self.add(UpSampling2D())                                                               
+        self.add(Conv2DTranspose(int(num_coefs/128),(3,3), strides=1, activation='relu'))        
+        self.add(BatchNormalization())                                                         
+        self.add(UpSampling2D())                                                               
+        self.add(Conv2DTranspose(int(num_coefs/256),(3,3), strides=1, activation='relu'))        
+        self.add(BatchNormalization())                                                               
+        self.add(UpSampling2D())                                                               
+        self.add(Conv2DTranspose(1,(3,3), strides=1, activation='relu'))                       
+        self.add(BatchNormalization())                                                         
+        self.add(Conv2D(1, (3,3), activation='hard_sigmoid'))                                                        
+        self.add(ZeroPadding2D((2,2)))                                 
+
+        self.compile(optimizer=Adam(learning_rate=learning_rate), loss=loss, metrics=metrics)
+
+        if verbose: print('LDM net output shape:', self.layers[len(self.layers)-1].output_shape)
