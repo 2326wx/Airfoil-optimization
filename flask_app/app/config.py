@@ -32,8 +32,8 @@ val_percentage                     = 0.9
 
 # prediction params
 n_points_in_predicted_dat          = 256
-weights_file                       = 'Final weights for 512x512 with Tversky loss and BS=16 2021-03-25 12-40.h5'
-# weights_file                       = 'train v4 bs12 2020-12-31 11-47.h5'
+# weights_file                       = 'Final weights for 512x512 with Tversky loss and BS=16 2021-03-25 12-40.h5'
+weights_file                       = 'train v4 bs12 2020-12-31 11-47.h5'
 yellow_threshold                   = 0.25
 
 # Flask app params
