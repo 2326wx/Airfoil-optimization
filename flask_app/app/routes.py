@@ -5,7 +5,7 @@ from app.config import *
 from pathlib import Path
 from app.dat_to_xls import get_foil_array
 from app.predict import predict
-from app.nets.nn import *
+from app.nets.nn import nn_2561024
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT']=0
 app.config["CACHE_TYPE"] = "null"
@@ -20,7 +20,7 @@ def cleanup(del_list):
                     pass
 
 # define model
-model = ldm_net(verbose=True)
+model = nn_2561024(verbose=True)
 model.load_weights(str(Path('./app/weights', weights_file)))
     
 

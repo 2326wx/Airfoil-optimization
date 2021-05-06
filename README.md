@@ -80,7 +80,7 @@ So, now we have **"X"** data as an array of (*n_data_layers, n_points_Re, n_poin
 For check of this data approach let's take extracting part of U-net and train it on images of 512x512 size.
 
 **ToDo:**
-1. Change image size to 256x1024 and achieve the same or better results.
+1. Change image size to 256x1024 and achieve the same or better results. - COMPLETED
 2. Use more complicated CNN architectures.
 3. Implement ensemble of different CNNs.
 
@@ -92,7 +92,7 @@ For check of this data approach let's take extracting part of U-net and train it
 Now using simplest MSE both for metric and loss.
 
 **ToDo:** 
-1. Use Tversky loss function and add IoU metric.
+1. Use Tversky loss function and add IoU metric. - COMPLETED
 
 
 
