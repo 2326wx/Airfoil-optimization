@@ -1,4 +1,4 @@
-# Inverse design of airfoil with DL methods
+# Inverse design of airfoil with DL methods 
 
 ## 1. Task description and problem setting
 
